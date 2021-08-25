@@ -79,7 +79,7 @@ def wish():
 
 # for news updates
 def news():
-    main_url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apikey=a1b6bc610a13416c94d3ea706258c67c'
+    main_url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apikey= YOUR_API'
 
     main_page = requests.get(main_url).json()
     # print(main_page)
@@ -118,7 +118,7 @@ def Whatsapp():
         hour = int(takecommand())
         speak("time in minutes")
         min = int(takecommand())
-        pywhatkit.sendwhatmsg("+917204453064", msg, hour, min, 20)
+        pywhatkit.sendwhatmsg("+9190909090", msg, hour, min, 20)
         speak("okay sir, sending whatsapp message")
 
     elif 'Dharani' in name:
@@ -129,7 +129,7 @@ def Whatsapp():
         hour = int(takecommand())
         speak("time in minutes")
         min = int(takecommand())
-        pywhatkit.sendwhatmsg("+917204453064", msg, hour, min, 20)
+        pywhatkit.sendwhatmsg("+9189898989", msg, hour, min, 20)
         speak("okay sir, sending whatsapp message")
 
     else:
@@ -335,7 +335,7 @@ def Task_Gui():
             webbrowser.open(f"{cm}")
 
         elif "send whatsapp message" in query:
-            kit.sendwhatmsg("+918105046232", "this is testing protocol", 16, 20)
+            kit.sendwhatmsg("+91 90909090909", "this is testing protocol", 16, 20)
             time.sleep(30)
             speak("message has been sent")
 
@@ -514,15 +514,15 @@ def Task_Gui():
             speak("Sir what should I say ")
             msz = takecommand()
 
-            account_sid = 'AC9756cb0d54621164a277e2456e984ed5'
-            auth_token = '3c9ea1d22e0ad717858d50225e309d1a'
+            account_sid = 'YOUR _SID'
+            auth_token = 'YOUR_TOKEN'
             client = Client(account_sid, auth_token)
 
             message = client.messages \
                 .create(
                 body='This is the ship that made the Kessel Run in fourteen parsecs?',
-                from_='+18507798742', #both number should be verified by twilio(to number also should be verified)
-                to='+1918105046232'
+                from_='+18544354353', #both number should be verified by twilio(to number also should be verified)
+                to='+19453454343'
             )
 
             print(message.sid)
@@ -530,15 +530,15 @@ def Task_Gui():
 
         elif "make a call" in query :
 
-            account_sid = 'AC9756cb0d54621164a277e2456e984ed5'
-            auth_token = '3c9ea1d22e0ad717858d50225e309d1a'
+            account_sid = '"YOUR_SID'
+            auth_token = '"YOUR_TOKEN'
             client = Client(account_sid, auth_token)
 
             message = client.calls \
                 .create(
                     twiml='<Response><Say> this is a testing call from Alpha ....</Say></Response>',
-                    from_='+18507798742', #both number should be verified by twilio(to number also should be verified)
-                    to='+918105046232'
+                    from = +948039482304', #both number should be verified by twilio(to number also should be verified)
+                    to='+9189457894759'
                 )
             print(message.sid)
 
@@ -556,8 +556,8 @@ def Task_Gui():
             import cv2
             import numpy as np
             import time
-            URL = "http://192.168.225.115:8080/video" #mary
-            #URL = "http://56.183.113.24:8080/video" #Bubesh
+            URL = "url" #mary
+            
             cap=cv2.VideoCapture(URL)
             while True:
                 ret, frame=cap.read()
